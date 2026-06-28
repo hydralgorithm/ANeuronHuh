@@ -32,7 +32,7 @@ def plot_final_fit(model, distances, times, distances_norm, times_std, times_mea
     
     plt.figure(figsize=(8,6))
     plt.plot(distances.numpy(),times.numpy(),color='orange',marker='o',linestyle='None',label='Actual Data (bikes & cars)')
-    plt.plot(distances.numpy(), predicted_times.numpy(), color="Dark Green",label='Non-Linear Model Predictions')
+    plt.plot(distances.numpy(), predicted_times.numpy(), color="Green",label='Non-Linear Model Predictions')
     plt.title("Non-Linear Model Fit vs Actual Data")
     plt.xlabel("Distance(miles)")
     plt.ylabel("Time(mins)")
@@ -40,7 +40,7 @@ def plot_final_fit(model, distances, times, distances_norm, times_std, times_mea
     plt.grid(True)
     plt.show()
 
-def plot_training_progress(epoch, loss, model, distances_norm, times_norm):
+def plot_training_progress(epoch, model, distances_norm, times_norm):
     clear_output(wait=True)
     predicted_norm=model(distances_norm)
     x_plot=distances_norm.numpy() 
